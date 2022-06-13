@@ -1,16 +1,13 @@
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/characters">Characters</RouterLink>
-      </nav>
-    </div>
+    <nav class="p-4 space-x-4">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/characters">Characters</RouterLink>
+    </nav>
   </header>
-
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <script>
