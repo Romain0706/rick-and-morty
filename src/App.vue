@@ -5,7 +5,7 @@
       <RouterLink to="/characters">Characters</RouterLink>
     </nav>
   </header>
-  <main>
+  <main class="p-4">
     <RouterView />
   </main>
 </template>
