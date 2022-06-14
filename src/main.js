@@ -12,6 +12,7 @@ const store = createStore({
       query: {
         page: 1,
         name: '',
+        status: '',
       },
     }
   },
