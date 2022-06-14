@@ -1,15 +1,20 @@
 <template>
   <header>
-    <nav class="p-4 space-x-4">
+    <nav class="px-4 py-2 space-x-4">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/characters">Characters</RouterLink>
     </nav>
   </header>
-  <main class="p-4">
+  <main>
     <RouterView />
   </main>
+  <VueQueryDevTools />
 </template>
 
 <script>
-  import { RouterLink, RouterView } from 'vue-router'
+  import { VueQueryDevTools } from 'vue-query/devtools';
+
+  export default {
+    components: { VueQueryDevTools },
+  };
 </script>
