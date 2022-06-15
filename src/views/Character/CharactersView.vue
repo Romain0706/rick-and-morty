@@ -30,7 +30,7 @@ const search = () => store.commit(
 
 <template>
   <div class="space-y-2 mb-4 p-4">
-    <h1 class="text-center font-schwifty text-[75px] text-blue">Characters</h1>
+    <h1 class="text-center font-schwifty text-[45px] md:text-[75px] text-blue">Characters</h1>
     <div class="space-y-1">
       <div class="flex justify-center space-x-2">
         <input v-model="searchInput" type="text" class="p-1 border-blue border w-full max-w-[200px]" placeholder="Search a character" />
