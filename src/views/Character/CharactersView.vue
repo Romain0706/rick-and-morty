@@ -29,7 +29,7 @@ const search = () => store.commit(
 </script>
 
 <template>
-  <div class="space-y-2 mb-4">
+  <div class="space-y-2 mb-4 p-4">
     <h1 class="text-center font-schwifty text-[75px] text-blue">Characters</h1>
     <div class="space-y-1">
       <div class="flex justify-center space-x-2">
@@ -47,15 +47,17 @@ const search = () => store.commit(
         <label for="unknown">Unknown</label>
       </div>
     </div>
-    <div v-if="isLoading">loading</div>
+    <div v-if="isLoading">loading...</div>
     <div v-else>
       <div class="flex flex-wrap justify-center max-w-[1000px] mx-auto">
-        <div class="relative overflow-hidden m-2 border-4 border-blue rounded-xl" v-for="character in data.results" :key="character.id">
-          <img class="h-[150px] w-[150px]" :src="character.image" />
-          <div class="absolute bottom-0 h-[35px] w-full flex justify-center items-center bg-blue/80">
-            <p class="text-xs font-bold text-white text-center px-1">{{ character.name }}</p>
+        <router-link :to="{ name: 'character', params: { id: character.id }}" v-for="character in data.results" :key="character.id">  
+          <div class="relative overflow-hidden m-2 border-4 border-blue rounded-xl">
+            <img class="h-[150px] w-[150px]" :src="character.image" />
+            <div class="absolute bottom-0 h-[35px] w-full flex justify-center items-center bg-blue/80">
+              <p class="text-xs font-bold text-white text-center px-1">{{ character.name }}</p>
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
       <div class="flex justify-center space-x-4 text-blue">
         <button :disabled="!data.info.prev" class="px-4 py-2 flex justify-center items-center border-2 border-blue rounded-xl disabled:opacity-50" @click="store.commit('setPage', store.state.query.page - 1)">
