@@ -15,8 +15,8 @@ const { isLoading, data } = useQuery(
   }
 );
 
-const searchInput = ref('');
-const statusInput = ref('');
+const searchInput = ref(store.state.query.name);
+const statusInput = ref(store.state.query.status);
 
 const search = () => store.commit(
   'setQuery',
@@ -33,17 +33,17 @@ const search = () => store.commit(
     <h1 class="text-center font-schwifty text-[45px] md:text-[75px] text-blue">Characters</h1>
     <div class="space-y-1">
       <div class="flex justify-center space-x-2">
-        <input v-model="searchInput" type="text" class="p-1 border-blue border w-full max-w-[200px]" placeholder="Search a character" />
+        <input @keyup.enter="search" v-model="searchInput" type="text" class="p-1 border-blue border w-full max-w-[200px]" placeholder="Search a character" />
         <button class="px-4 text-white bg-blue/50 hover:bg-blue" @click="search">Search</button>
       </div>
       <div class="space-x-2 text-center">
-        <input type="radio" id="all" v-model="statusInput" value="">
+        <input type="radio" id="all" v-model="statusInput" value="" @keyup.enter="search" >
         <label for="all">All</label>
-        <input type="radio" id="alive" v-model="statusInput" value="alive">
+        <input type="radio" id="alive" v-model="statusInput" value="alive" @keyup.enter="search">
         <label for="alive">Alive</label>
-        <input type="radio" id="dead" v-model="statusInput" value="dead">
+        <input type="radio" id="dead" v-model="statusInput" value="dead" @keyup.enter="search">
         <label for="dead">Dead</label>
-        <input type="radio" id="unknown" v-model="statusInput" value="unknown">
+        <input type="radio" id="unknown" v-model="statusInput" value="unknown" @keyup.enter="search">
         <label for="unknown">Unknown</label>
       </div>
     </div>

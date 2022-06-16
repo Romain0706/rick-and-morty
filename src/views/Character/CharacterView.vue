@@ -20,7 +20,7 @@ const { isLoading, data } = useQuery(
 <template>
   <div v-if="isLoading">loading...</div>
   <div v-else class="space-y-2 mb-4 p-4 text-center">
-    <button class="px-4 py-2 flex justify-center items-center border-2 border-blue rounded-xl" @click="router.go('-1')">
+    <button class="px-4 py-2 flex justify-center items-center border-2 border-blue rounded-xl text-blue" @click="router.go('-1')">
       <svg width="24" height="24" viewBox="0 0 24 24">
           <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
       </svg>
