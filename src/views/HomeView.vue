@@ -1,5 +1,3 @@
 <template>
-  <main>
-    <h1>Home</h1>
-  </main>
+  <img class="mx-auto p-4 mt-4" src="images/rick-and-morty.png" />
 </template>

@@ -1,18 +1,20 @@
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/characters">Characters</RouterLink>
-      </nav>
-    </div>
+    <nav class="px-4 py-2 space-x-4 border-b border-blue text-blue">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/characters">Characters</RouterLink>
+    </nav>
   </header>
-
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
+  <VueQueryDevTools />
 </template>
 
 <script>
-  import { RouterLink, RouterView } from 'vue-router'
+  import { VueQueryDevTools } from 'vue-query/devtools';
+
+  export default {
+    components: { VueQueryDevTools },
+  };
 </script>

@@ -7,11 +7,17 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "vue": "^3.2.36",
-    "vue-router": "^4.0.15"
+    "vue-query": "^1.25.0",
+    "vue-router": "^4.0.15",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.2",
     "vite": "^2.9.9"
   }
 }
